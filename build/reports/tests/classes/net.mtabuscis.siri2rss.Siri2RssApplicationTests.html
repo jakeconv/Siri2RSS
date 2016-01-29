@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class net.mtabuscis.siri2rss.Siri2RssApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class net.mtabuscis.siri2rss.Siri2RssApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/net.mtabuscis.siri2rss.html">net.mtabuscis.siri2rss</a> &gt; Siri2RssApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.001s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads</td>
+<td>0.001s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>18:02:04.189 [Test worker] DEBUG o.s.t.c.j.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.204 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+18:02:04.210 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+18:02:04.219 [Test worker] DEBUG o.s.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests] from class [org.springframework.test.context.support.DefaultTestContextBootstrapper]
+18:02:04.242 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@152e9b09 declaringClass = 'net.mtabuscis.siri2rss.Siri2RssApplicationTests', classes = '{class net.mtabuscis.siri2rss.Siri2RssApplication}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+18:02:04.249 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]: class path resource [net/mtabuscis/siri2rss/Siri2RssApplicationTests-context.xml] does not exist
+18:02:04.250 [Test worker] DEBUG o.s.t.c.s.AbstractContextLoader - Did not detect default resource location for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]: class path resource [net/mtabuscis/siri2rss/Siri2RssApplicationTestsContext.groovy] does not exist
+18:02:04.250 [Test worker] INFO  o.s.t.c.s.AbstractContextLoader - Could not detect default resource locations for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+18:02:04.252 [Test worker] DEBUG o.s.t.c.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.256 [Test worker] DEBUG o.s.t.c.s.DefaultTestContextBootstrapper - @TestExecutionListeners is not present for class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]: using defaults.
+18:02:04.263 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+18:02:04.269 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+18:02:04.270 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+18:02:04.275 [Test worker] INFO  o.s.t.c.s.DefaultTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@58105024, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@61c7197, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@525f3ef3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6d9ae006]
+18:02:04.277 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.278 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.280 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.280 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.281 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.281 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.283 [Test worker] DEBUG o.s.t.c.s.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@552caf24 testClass = Siri2RssApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@76a4ff55 testClass = Siri2RssApplicationTests, locations = '{}', classes = '{class net.mtabuscis.siri2rss.Siri2RssApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+18:02:04.284 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.285 [Test worker] DEBUG o.s.t.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [net.mtabuscis.siri2rss.Siri2RssApplicationTests]
+18:02:04.287 [Test worker] DEBUG o.s.t.c.s.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@552caf24 testClass = Siri2RssApplicationTests, testInstance = net.mtabuscis.siri2rss.Siri2RssApplicationTests@5b1ff0c7, testMethod = [null], testException = [null], mergedContextConfiguration = [MergedContextConfiguration@76a4ff55 testClass = Siri2RssApplicationTests, locations = '{}', classes = '{class net.mtabuscis.siri2rss.Siri2RssApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+18:02:04.354 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+18:02:04.357 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+18:02:04.357 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+18:02:04.359 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.3.2.RELEASE)
+
+2016-01-29 18:02:04.683  INFO 7940 --- [    Test worker] n.m.siri2rss.Siri2RssApplicationTests    : Starting Siri2RssApplicationTests on MacBookPro-542696D5B947-2.local with PID 7940 (started by phil in /Users/phil/Documents/workspace Jan16-springeclipse/Siri2RSS)
+2016-01-29 18:02:04.683  INFO 7940 --- [    Test worker] n.m.siri2rss.Siri2RssApplicationTests    : No active profile set, falling back to default profiles: default
+2016-01-29 18:02:04.737  INFO 7940 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@3ecfc5a9: startup date [Fri Jan 29 18:02:04 EST 2016]; root of context hierarchy
+2016-01-29 18:02:05.612  INFO 7940 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 
+2016-01-29 18:02:06.072  INFO 7940 --- [    Test worker] n.m.siri2rss.Siri2RssApplicationTests    : Started Siri2RssApplicationTests in 1.71 seconds (JVM running for 2.706)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Fatal Error] :1:1: Content is not allowed in prolog.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>Generated by 
+<a href="http://www.gradle.org">Gradle 2.2</a> at Jan 29, 2016 6:02:06 PM</p>
+</div>
+</div>
+</body>

@@ -1,0 +1,1 @@
+This is the Siri2RSS project ReadMe file.  Please import siri-20-java as a separate project (included in a zip)
