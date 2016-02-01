@@ -11,9 +11,14 @@ import org.springframework.stereotype.Component;
 import net.mtabuscis.siri2rss.controller.RSSWebInterface;
 import net.mtabuscis.siri2rss.input.services.DataOutputService;
 import net.mtabuscis.siri2rss.model.SiriPayload;
-import com.sun.syndication.feed.rss.Channel;
-import com.sun.syndication.feed.rss.Description;
-import com.sun.syndication.feed.rss.Item;
+import com.sun.syndication.feed.synd.SyndContent;
+import com.sun.syndication.feed.synd.SyndContentImpl;
+import com.sun.syndication.feed.synd.SyndEntry;
+import com.sun.syndication.feed.synd.SyndEntryImpl;
+import com.sun.syndication.feed.synd.SyndFeed;
+import com.sun.syndication.feed.synd.SyndFeedImpl;
+import com.sun.syndication.io.FeedException;
+import com.sun.syndication.io.SyndFeedOutput;
 
 @Component
 public class RSSDataOutputServiceImpl implements DataOutputService {
@@ -26,7 +31,7 @@ public class RSSDataOutputServiceImpl implements DataOutputService {
 	private ThreadPoolTaskExecutor _executor;
 	
 	//for threads
-	private static Channel _latestRSSFeed = null;
+	private static SyndFeed _latestRSSFeed = null;
 	
 	@Override
 	//non blocking method... can't block
@@ -58,16 +63,23 @@ public class RSSDataOutputServiceImpl implements DataOutputService {
 		@Override
 		public void run(){
 			if(_latestRSSFeed == null){
-				_latestRSSFeed = new Channel();
+				_latestRSSFeed = new SyndFeedImpl();
 			}
 			fillMetaData();
 			fillContent();
 			
-			String latestFeed = _latestRSSFeed.getGenerator();
+			String feedString = "";
+			SyndFeedOutput output = new SyndFeedOutput();
+			try {
+				feedString = output.outputString(_latestRSSFeed);
+			} catch (FeedException e) {
+				e.printStackTrace();
+				throw new RuntimeException("FeedException with converting the rss feed to an output string");
+			}
+
+			_web.setRSSData(feedString);
 			
-			_web.setRSSData(latestFeed);
-			
-			_log.info("Feed is now: "+latestFeed);
+			_log.info("Feed is now: "+feedString);
 			
 			_log.info("Feed fully read... RSS Creation Thread Ending");
 		}
@@ -77,29 +89,39 @@ public class RSSDataOutputServiceImpl implements DataOutputService {
 			_latestRSSFeed.setDescription("Information from SIRI regarding NYC Public Transit");
 			_latestRSSFeed.setLink("http://www.mta.info");
 			_latestRSSFeed.setLanguage("en");
+			_latestRSSFeed.setFeedType("rss_2.0");
 		}
 		
 		private void fillContent(){
 			
-			List<Item> items = new ArrayList<Item>();
+			List<SyndEntry> items = new ArrayList<SyndEntry>();
 			
 			for(SiriPayload siriRow : _data ){
 				
 				_log.info("Setting data for item "+siriRow.getSummary());
 			
-				Item rssRow = new Item();
+				SyndEntry rssRow = new SyndEntryImpl();
 				rssRow.setTitle(siriRow.getTitle());
 				rssRow.setLink(siriRow.getUrl());
-				rssRow.setComments(siriRow.getComments());
-				Description d = new Description();
-				d.setValue(siriRow.getSummary());
-				rssRow.setDescription(d);
-				rssRow.setPubDate(siriRow.getCreatedDate());
+				
+				SyndContent description = new SyndContentImpl();
+				description.setType("text/plain");
+				description.setValue(siriRow.getComments());
+				rssRow.setDescription(description);
+				//desc.set
+				
+				List<SyndContent> sContents = new ArrayList<SyndContent>();
+				SyndContent sc = new SyndContentImpl();
+				sc.setType("text/plain");
+				sc.setValue(siriRow.getSummary());
+				rssRow.setContents(sContents);
+				
+				rssRow.setPublishedDate(siriRow.getCreatedDate());
 				
 				items.add(rssRow);
 			}
 			
-			_latestRSSFeed.setItems(items);
+			_latestRSSFeed.setEntries(items);
 		}
 		
 	}
