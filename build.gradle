@@ -40,6 +40,7 @@ dependencies {
 	compile 'rome:rome:1.0'
 	compile 'org.jdom:jdom:2.0.0'
 	compile 'org.json:json:20141113'
+	compile 'org.twitter4j:twitter4j-core:4.0.1'
 	compile group: 'org.onebusaway', name: 'onebusaway-siri-api-v20', version: '1.0.0-SNAPSHOT'
 	compile('org.springframework.boot:spring-boot-starter-web')
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
