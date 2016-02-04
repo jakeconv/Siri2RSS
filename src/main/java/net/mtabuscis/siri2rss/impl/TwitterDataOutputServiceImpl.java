@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,7 @@ import net.mtabuscis.siri2rss.input.services.DataOutputService;
 import net.mtabuscis.siri2rss.model.SiriPayload;
 
 @Component
+@Profile("Has Twitter")
 public class TwitterDataOutputServiceImpl implements DataOutputService{
 	
 	private static Logger _log = LoggerFactory.getLogger(TwitterDataOutputServiceImpl.class);
