@@ -43,10 +43,10 @@ public class TwitterDataOutputServiceImpl implements DataOutputService{
 		//First, set up the twitter account.  Gonna want to put these keys in a config file.
 		ConfigurationBuilder config=new ConfigurationBuilder();
 		config.setDebugEnabled(true)
-		  .setOAuthConsumerKey("2TZ71q8VFL3mjF2N1RIfRU2CN")
-		  .setOAuthConsumerSecret("kPE0XndrBgD3fsDWU8YxLdkNVazk2dfstk2PM9E2kCtbbqOkxX")
-		  .setOAuthAccessToken("4814539408-bEuJ1soVfDYEqrcMhA4OdTYcT6UnO5Vcv1L61PY")
-		  .setOAuthAccessTokenSecret("bF5RPu9TWHpwa1SFdF5YCUygxpgJIqUH0jVcIDSAk1gqy");
+		  .setOAuthConsumerKey("")
+		  .setOAuthConsumerSecret("")
+		  .setOAuthAccessToken("")
+		  .setOAuthAccessTokenSecret("");
 		//Set the authorization
 		OAuthAuthorization auth=new OAuthAuthorization(config.build());
 		_twitterFeed=new TwitterFactory().getInstance(auth);
